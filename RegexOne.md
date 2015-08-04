@@ -1,6 +1,6 @@
 # regex-note
-
-```abc…	Letters
+```
+abc…	Letters
 123…	Digits
 \d	Any Digit
 \D	Any Non-digit character
@@ -23,4 +23,5 @@
 (…)	Capture Group
 (a(bc))	Capture Sub-group
 (.*)	Capture all
-(abc|def)	Matches abc or def```
+(abc|def)	Matches abc or def
+```
