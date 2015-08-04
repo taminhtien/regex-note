@@ -1,4 +1,5 @@
 # regex-note
+
 ```
 abc…	      Letters
 123…	      Digits
@@ -25,7 +26,8 @@ abc…	      Letters
 (.*)	    Capture all
 (abc|def)	Matches abc or def
 ```
-- Matching Phone Numbers
+
+- Problem 1: Matching phone numbers
 
 ```
 Task	  Text	            Capture   Groups	 
@@ -38,7 +40,8 @@ Capture	  1 416 555 9292	416	      Success
 
 1?[\s]?\(?(\d{3})\)?[-\s]?\d{3}[-\s]?\d{4}
 ```
-- Matching Numbers
+
+- Problem 2: Matching a decimal numbers
 
 ```
 Task	  Text	 
@@ -51,7 +54,9 @@ Skip	  720p	        Success
 
 ^-?\d+(,\d+)*(\.\d+(e\d+)?)?$
 ```
-- Matching Emails
+
+- Problem 3: Matching Emails
+
 ```
 Task	    Text	                            Capture     Groups	 
 Capture	    tom@hogwarts.com	                tom	        Success
@@ -63,5 +68,42 @@ Capture	    harry@hogwarts.com	                harry	    Success
 Capture	    hermione+regexone@hogwarts.com	    hermione	Success
 
 ^([\w.]*)
+```
 
+- Problem 4: Matching HTML
+
+```
+Task	    Text	                                Capture Groups	 
+Capture	    <a>This is a link</a>	                a	
+Capture	    <a href='http://regexone.com'>Link</a>	a	        
+Capture	    <div class='test_style'>Test</div>	    div	        
+Capture	    <div>Hello <span>world</span></div>	    div	    
+
+<(\w+)
+```
+
+- Problem 5: Matching specific filenames
+
+```
+Task	Text	                Capture Groups	 
+Skip	.bash_profile		                        
+Skip	workspace.doc		                        
+Capture	img0912.jpg	            img0912 jpg	        
+Capture	updated_img0912.png	    updated_img0912 png	
+Skip	documentation.html		                    
+Capture	favicon.gif	            favicon gif	        
+Skip	img0912.jpg.tmp		                       
+Skip	access.lock	
+
+(\w+)\.(jpg|png|gif)$
+```
+
+- Problem 6: Trimming whitespace from start and end of line
+
+```
+Task	    Text	                            Capture Groups	 
+Capture				The quick brown fox...	    The quick brown fox...	    Success
+Capture	   jumped over the lazy dog.	        jumped over the lazy dog.	Success
+
+^\s*(.*)\s*$
 ```
