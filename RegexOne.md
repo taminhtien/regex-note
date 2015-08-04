@@ -28,7 +28,7 @@ abc…	      Letters
 - Matching Phone Numbers
 
 ```
-Task	    Text	        Capture   Groups	 
+Task	  Text	            Capture   Groups	 
 Capture	  415-555-1234	    415	      Success
 Capture	  650-555-2345	    650	      Success
 Capture	  (416)555-3456	    416	      Success
@@ -38,3 +38,17 @@ Capture	  1 416 555 9292	416	      Success
 
 1?[\s]?\(?(\d{3})\)?[-\s]?\d{3}[-\s]?\d{4}
 ```
+- Matching Numbers
+
+```
+Task	  Text	 
+Match	  3.14529	    Success
+Match	  -255.34	    Success
+Match	  128	        Success
+Match	  1.9e10	    Success
+Match	  123,340.00	Success
+Skip	  720p	        Success
+
+^-?\d+(,\d+)*(\.\d+(e\d+)?)?$
+```
+
