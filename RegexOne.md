@@ -25,3 +25,16 @@ abc…	      Letters
 (.*)	    Capture all
 (abc|def)	Matches abc or def
 ```
+- Matching Phone Numbers
+
+```
+Task	    Text	        Capture   Groups	 
+Capture	  415-555-1234	    415	      Success
+Capture	  650-555-2345	    650	      Success
+Capture	  (416)555-3456	    416	      Success
+Capture	  202 555 4567	    202	      Success
+Capture	  4035555678	    403	      Success
+Capture	  1 416 555 9292	416	      Success
+
+1?[\s]?\(?(\d{3})\)?[-\s]?\d{3}[-\s]?\d{4}
+```
