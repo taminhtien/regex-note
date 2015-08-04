@@ -51,4 +51,17 @@ Skip	  720p	        Success
 
 ^-?\d+(,\d+)*(\.\d+(e\d+)?)?$
 ```
+- Matching Emails
+```
+Task	    Text	                            Capture     Groups	 
+Capture	    tom@hogwarts.com	                tom	        Success
+Capture	    tom.riddle@hogwarts.com	            tom.riddle	Success
+Capture	    tom.riddle+regexone@hogwarts.com	tom.riddle	Success
+Capture	    tom@hogwarts.eu.com	                tom	        Success
+Capture	    potter@hogwarts.com	                potter	    Success
+Capture	    harry@hogwarts.com	                harry	    Success
+Capture	    hermione+regexone@hogwarts.com	    hermione	Success
 
+^([\w.]*)
+
+```
